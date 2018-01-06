@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <title></title>
+    <style type="text/css">
+        body {
+            background: #f1fada;
+        }
+
+        #log_title {
+            color: #110a22;
+            font-size: 22px;
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 0px 0px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+
+        .button {
+            background-color: white;
+            color: black;
+            border: 1px solid #e065e6;
+        }
+
+        .button:active {
+            background-color: rgba(224, 101, 230, 0.64);
+            color: white;
+        }
+
+    </style>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        function androidLoadJsMethod() {
+            document.getElementById("log_msg").innerHTML =
+                "<p style='color: #03ed09;'>Android调用了Js函数" + "</p>";
+            return "msg from js";
+        }
+
+        function androidLoadJsWithParams(msg) {
+            document.getElementById("log_msg").innerHTML =
+                "<p style='color: #3654ff;'>Android带参调用JS方法，参数为：" + msg + " </p>";
+        }
+
+        function valueFromAndroid(msg) {
+            document.getElementById("log_msg").innerHTML =
+                "<p style='color: #ff7e3f;'>JS调用Anroid再回调JS方法，返回值为：" + msg + "</p>";
+
+            scrollBottom();
+        }
+
+
+        /**
+         * js调用Android方法，不带参数
+         */
+        function jsLoadAndroidMethod() {
+            JsBridge.jsLoadAndroid();
+        }
+
+        /**
+         * js调用Android方法，带有参数
+         */
+        function jsLoadAndroidMethodWithParams() {
+            JsBridge.jsLoadAndroidWithParams('我是JS的参数');
+        }
+
+        /**
+         * js调用Android方法，并获得返回值
+         */
+        function jsGetReturnFromAndroidMethod() {
+            JsBridge.jsGetParamsFromAndroid();
+        }
+
+
+        function scrollBottom() {
+            $('html,body').animate({scrollTop: $('.bottom').offset().top}, 800);
+        }
+
+    </script>
+</head>
+<body>
+<h2 align="center">Android与WebView的JS交互</h2>
+<div align="center">
+    <!--getMethodFromJs为Android的Void方法-->
+    <button class="button" onclick="jsLoadAndroidMethod()">JS无参调用Android方法</button>
+</div>
+
+<br/>
+<div align="center">
+    <!--getParamFromJs(String msg)为Android里的Void方法-->
+    <button class="button" onclick="jsLoadAndroidMethodWithParams()">JS传参调用Android方法</button>
+</div>
+
+<br/>
+<div align="center">
+    <!--jsGetValueFromAndroid为Android里带返回值的方法-->
+    <button class="button" onclick="jsGetReturnFromAndroidMethod()">JS调用Android方法，并获取返回值</button>
+</div>
+
+<br/>
+<div id="log_msg" align="center"><p id="log_title">打印信息</p></div>
+</body>
+</html>

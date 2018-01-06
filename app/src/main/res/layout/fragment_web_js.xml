@@ -1,0 +1,50 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fangzp.x5webviewdemo.fragment.WebJsFragment">
+
+    <com.fangzp.x5module.X5WebView
+        android:id="@+id/x5_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_js"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="无参调js"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_js_params"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_js_params"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/x5_web" />
+
+    <Button
+        android:id="@+id/btn_js_params"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="传参调用js"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_js_ev"
+        app:layout_constraintStart_toEndOf="@+id/btn_js"
+        app:layout_constraintTop_toBottomOf="@+id/x5_web"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_js_ev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="evaluate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_js_params"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/x5_web"
+        app:layout_constraintStart_toEndOf="@+id/btn_js_params" />
+
+</android.support.constraint.ConstraintLayout>
