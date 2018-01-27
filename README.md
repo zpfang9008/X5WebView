@@ -5,7 +5,7 @@
 #- WebView文件选择
 
 ### 模块说明
-`webdemo - demo`
+`app - demo`
 
 `x5module - 依赖模块`
 
