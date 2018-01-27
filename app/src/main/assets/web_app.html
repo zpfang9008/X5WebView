@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body
+			{background: #dbebfa;}
+			
+			#log_title
+			{color: #E91E63;font-size: 20px;}
+		</style>
+		<script type="text/javascript">
+			function androidLoadJsMethod(){
+				document.getElementById("log_msg").innerHTML +="<br />Android调用了Js函数";
+			}
+			function androidLoadJsWithParams(msg){
+				document.getElementById("log_msg").innerHTML +="<br />Android带参调用JS方法，参数为：" + msg;
+			}
+			function valueFromAndroid(msg){
+				document.getElementById("log_msg").innerHTML +="<br />JS调用Anroid再回调JS方法，获得的返回值为：" + msg;
+			}
+			
+			function(){
+				var image = document.getElementById("id_image_select");
+				var show = document.getElementById("show");
+				
+				function init(){
+					if(!(window.FileReader && window.File && window.FileList && window.Blob)){
+						show.innerHTML = '您的浏览器不支持fileReader';
+						image.setAttribute('disabled','disabled');
+						return false;
+					}
+					handler();
+				}
+				
+				function handler(){
+					image.addEventListener('change',function(e){
+						var files = this.files;
+						if(files.length){
+							checkFile(this.files);
+						}
+					})
+				}
+				
+				function checkFile(files){
+					if (files.length != 0) {
+						
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p align="center">Android与WebView的JS交互</p>
+		<div align="center">
+			<!--getMethodFromJs为Android的Void方法-->
+			<button onclick="window.jsBridge.jsLoadAndroid()">JS无参调用Android方法</button>
+		</div>
+		<br />
+		<div align="center">
+			<!--getParamFromJs(String msg)为Android里的Void方法-->
+			<button onclick="window.jsBridge.jsLoadAndroidWithParams('我是JS的参数')">JS传参调用Android方法</button>
+		</div>
+		<br />
+		<div align="center">
+			<!--jsGetValueFromAndroid为Android里带返回值的方法-->
+			<button onclick="window.jsBridge.jsGetParamsFromAndroid()">JS调用Android方法，并获取返回值</button>
+		</div>
+		<br />
+		<div id="log_msg" align="center"><p id="log_title">方法调用打印信息</p></div>
+		<div align="center" class="select_image">
+			<input type="file" id="id_image_select" multiple=""/>
+		</div>
+		<div align="center" class="show" id="show"></div>
+		<fieldset class="itemset">
+			<input class="filechooser" id="file_chooser" type="file"
+                   placeholder="file path" onchange="display()" oninput="display()">
+            <br>
+            <p id="file_chooser_display"></p>
+            <div class="line_black"></div>
+		</fieldset>
+	</body>
+</html>

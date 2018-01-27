@@ -1,4 +1,4 @@
-package com.example.peng.x5webdemo;
+package com.example.peng.x5webdemo.util;
 
 import android.app.Activity;
 import android.content.res.AssetManager;

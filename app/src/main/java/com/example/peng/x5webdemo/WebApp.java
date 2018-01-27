@@ -3,6 +3,7 @@ package com.example.peng.x5webdemo;
 import android.app.Application;
 import android.util.Log;
 
+import com.example.peng.x5webdemo.util.AppExecutors;
 import com.tencent.smtt.sdk.QbSdk;
 
 /**

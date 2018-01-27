@@ -1,4 +1,4 @@
-package com.example.peng.x5webdemo;
+package com.example.peng.x5webdemo.activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,8 +12,9 @@ import android.util.Log;
 import android.view.View;
 
 
-import com.example.peng.x5webdemo.activity.OfficeActivity;
-import com.example.peng.x5webdemo.activity.WebViewActivity;
+import com.example.peng.x5webdemo.R;
+import com.example.peng.x5webdemo.util.Utils;
+import com.example.peng.x5webdemo.WebApp;
 
 import java.io.File;
 
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void openWeb(View view) {
         startActivity(new Intent(this, WebViewActivity.class));
+    }
+
+    public void openWebJs(View view) {
+        startActivity(new Intent(this, WebJsActivity.class));
     }
 
     public void openXls(View view) {

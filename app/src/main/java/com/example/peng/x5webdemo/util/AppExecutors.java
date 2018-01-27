@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.peng.x5webdemo;
+package com.example.peng.x5webdemo.util;
 
 import android.os.Handler;
 import android.os.Looper;

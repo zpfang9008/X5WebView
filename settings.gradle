@@ -1,1 +1,1 @@
-include ':app', ':x5module'
+include ':app', ':x5module', ':X5WebDemo'
