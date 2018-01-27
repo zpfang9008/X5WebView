@@ -1,8 +1,15 @@
 ### 基于腾讯TBS浏览服务的Demo
 - 使用X5WebView
 - 使用`TbsReaderView`查看本地SD的office文件
-- JS与原生方法互调
-- WebView文件选择
+#- JS与原生方法互调
+#- WebView文件选择
+
+### 模块说明
+`webdemo - demo`
+
+`x5module - 依赖模块`
+
+`X5WebDemo - 腾讯浏览服务自带demo`
 
 ### 对应的版本
 - [TBS](https://x5.tencent.com/tbs/#)

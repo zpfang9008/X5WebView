@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/X5WebDemo/X5WebDemo.iml" filepath="$PROJECT_DIR$/X5WebDemo/X5WebDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/X5WebView.iml" filepath="$PROJECT_DIR$/X5WebView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webdemo/webdemo.iml" filepath="$PROJECT_DIR$/webdemo/webdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/x5module/x5module.iml" filepath="$PROJECT_DIR$/x5module/x5module.iml" />
     </modules>
   </component>

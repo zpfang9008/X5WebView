@@ -95,4 +95,8 @@ public class OfficeView extends FrameLayout implements TbsReaderView.ReaderCallb
         Log.d(TAG, "文件类型" + str);
         return str;
     }
+
+    public void onStop(){
+        tbsReaderView.onStop();
+    }
 }
