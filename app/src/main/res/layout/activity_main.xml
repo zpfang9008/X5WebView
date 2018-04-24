@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="8dp" />
 
     <Button
         android:id="@+id/btn_web"
@@ -11,9 +17,10 @@
         android:layout_height="wrap_content"
         android:onClick="openWeb"
         android:text="打开WebView"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
 
     <Button
         android:id="@+id/btn_web_js"
@@ -21,6 +28,7 @@
         android:layout_height="wrap_content"
         android:onClick="openWebJs"
         android:text="WebView Js 交互"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_web" />
@@ -86,6 +94,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_doc" />
+
+    <Button
+        android:id="@+id/btn_jump"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="openThird"
+        android:text="跳转"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_docx" />
+
+    <Button
+        android:id="@+id/btn_pdf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="openPDF"
+        android:text="PDF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_jump" />
 
 
 </android.support.constraint.ConstraintLayout>

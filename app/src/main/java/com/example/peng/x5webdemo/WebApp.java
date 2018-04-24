@@ -27,7 +27,7 @@ public class WebApp extends Application {
         sAppExecutors = new AppExecutors();
     }
 
-    private void init(){
+    private void init() {
         QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
 
             @Override
@@ -43,6 +43,7 @@ public class WebApp extends Application {
         };
         //x5内核初始化接口
         QbSdk.initX5Environment(getApplicationContext(), cb);
+        Log.d(TAG, "init: " + QbSdk.isTbsCoreInited());
     }
 
     public static AppExecutors getAppExecutors() {
