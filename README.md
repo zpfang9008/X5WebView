@@ -12,9 +12,9 @@
 `X5WebDemo - 腾讯浏览服务自带demo`
 
 ### 对应的版本
-- [TBS](https://x5.tencent.com/tbs/#)
-- 版本：v3.5.0.1004
-- 更新日期：2017-09-26
+- [Android SDK（完整版）](https://x5.tencent.com/tbs/sdk.html)
+- 版本：v3.6.0.1183
+- 更新日期：2018-02-11
 
 ### 参考
 - [基于腾讯浏览服务 TBS 实现应用内打开并浏览 Office 文件](http://yifeng.studio/2017/10/21/android-open-office-files-with-tbs-within-app/?utm_source=tuicool&utm_medium=referral)
