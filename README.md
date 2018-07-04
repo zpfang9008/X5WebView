@@ -13,8 +13,10 @@
 
 ### 对应的版本
 - [Android SDK（完整版）](https://x5.tencent.com/tbs/sdk.html)
-- 版本：v3.6.0.1183
-- 更新日期：2018-02-11
+- 版本：v3.6.0.1249
+- 更新日期：2018-06-08
+- 说明：可独立下载x5内核，也可共享使用微信或手Q的x5内核，详情说明见下载文件
+
 
 ### 参考
 - [基于腾讯浏览服务 TBS 实现应用内打开并浏览 Office 文件](http://yifeng.studio/2017/10/21/android-open-office-files-with-tbs-within-app/?utm_source=tuicool&utm_medium=referral)
