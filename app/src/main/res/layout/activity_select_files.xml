@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_doc"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开doc"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tv_docx"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开docx"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_xls"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开xls"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tv_xlsx"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开xlsx"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_ppt"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开ppt"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tv_pptx"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开pptx"
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pdf"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="打开pdf"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

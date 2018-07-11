@@ -32,6 +32,7 @@ public class Utils {
             OutputStream out = null;
             try {
                 in = assetManager.open(filename);
+                Log.d("tag", "copyAssets: " + filename);
                 File outFile = new File(activity.getExternalFilesDir(null), filename);
                 out = new FileOutputStream(outFile);
                 copyFile(in, out);

@@ -19,21 +19,21 @@ import java.io.File;
  * @description 使用腾讯TBS打开office文件
  */
 
-public class OfficeView extends FrameLayout implements TbsReaderView.ReaderCallback {
+public class FileView extends FrameLayout implements TbsReaderView.ReaderCallback {
 
     private static final String TAG = "OfficeView";
 
-    private TbsReaderView tbsReaderView;
+    private TbsReaderView mTbsReaderView;
 
-    public OfficeView(Context context) {
+    public FileView(Context context) {
         this(context, null);
     }
 
-    public OfficeView(Context context, AttributeSet attrs) {
+    public FileView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public OfficeView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FileView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -44,11 +44,11 @@ public class OfficeView extends FrameLayout implements TbsReaderView.ReaderCallb
     }
 
     private void init() {
-        tbsReaderView = new TbsReaderView(getContext(), this);
-        addView(tbsReaderView, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+        mTbsReaderView = getTbsReaderView(getContext());
+        removeAllViews();
+        addView(mTbsReaderView, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
     }
-
 
     private TbsReaderView getTbsReaderView(Context context) {
         return new TbsReaderView(context, this);
@@ -60,12 +60,12 @@ public class OfficeView extends FrameLayout implements TbsReaderView.ReaderCallb
             Bundle localBundle = new Bundle();
             localBundle.putString("filePath", mFile.toString());
             localBundle.putString("tempPath", Environment.getExternalStorageDirectory() + "/" + "TbsReaderTemp");
-            if (tbsReaderView == null) {
-                tbsReaderView = getTbsReaderView(getContext());
+            if (mTbsReaderView == null) {
+                mTbsReaderView = getTbsReaderView(getContext());
             }
-            boolean bool = tbsReaderView.preOpen(getFileType(mFile.toString()), false);
+            boolean bool = mTbsReaderView.preOpen(getFileType(mFile.toString()), false);
             if (bool) {
-                tbsReaderView.openFile(localBundle);
+                mTbsReaderView.openFile(localBundle);
             }
         } else {
             Log.e(TAG, "文件路径无效！: ");
@@ -96,7 +96,17 @@ public class OfficeView extends FrameLayout implements TbsReaderView.ReaderCallb
         return str;
     }
 
-    public void onStop(){
-        tbsReaderView.onStop();
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (mTbsReaderView != null) {
+            mTbsReaderView.onStop();
+        }
+    }
+
+    public void onStop() {
+        if (mTbsReaderView != null) {
+            mTbsReaderView.onStop();
+        }
     }
 }
