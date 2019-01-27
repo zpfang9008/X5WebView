@@ -1,21 +1,10 @@
 ### 基于腾讯TBS浏览服务的Demo
-- 使用X5WebView
 - 使用`TbsReaderView`查看本地SD的office文件
-#- JS与原生方法互调
-#- WebView文件选择
-
-### 模块说明
-`app - demo`
-
-`x5module - 依赖模块`
-
-`X5WebDemo - 腾讯浏览服务自带demo`
 
 ### 对应的版本
 - [Android SDK（完整版）](https://x5.tencent.com/tbs/sdk.html)
-- 版本：v3.6.0.1315
-- 更新日期：2018-07-18
-- 说明：可独立下载x5内核，也可共享使用微信或手Q的x5内核，详情说明见下载文件
+- 版本：v3.6.0.1371
+- 更新日期：2018-11-29
 
 
 ### 参考
