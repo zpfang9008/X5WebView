@@ -1,2 +1,3 @@
-include ':app',
-        ':module_x5webview'
+include ':app_webview',
+        ':lib_webview'
+
