@@ -18,6 +18,7 @@ import com.example.peng.x5webdemo.WebApp;
 import com.example.peng.x5webdemo.databinding.ActivitySelectFilesBinding;
 import com.example.peng.x5webdemo.util.Objects;
 import com.example.peng.x5webdemo.util.Utils;
+import com.tencent.smtt.sdk.QbSdk;
 
 import java.io.File;
 
@@ -55,6 +56,7 @@ public class SelectFilesActivity extends AppCompatActivity {
         checkPermission();
         setToolBar();
         setListener();
+        displayInfo();
     }
 
     private void setToolBar() {
@@ -180,5 +182,18 @@ public class SelectFilesActivity extends AppCompatActivity {
                 + File.separator;
         Log.d(TAG, "startActivity: " + filePath + fileName[position]);
         FileActivity.start(this, filePath + fileName[position]);
+    }
+
+    private void displayInfo() {
+        boolean canLoadX5FirstTimeThirdApp = QbSdk.canLoadX5FirstTimeThirdApp(this);
+        boolean canLoadX5 = QbSdk.canLoadX5(this);
+        String getMiniQBVersion = QbSdk.getMiniQBVersion(this);
+        int getTbsVersion = QbSdk.getTbsVersion(this);
+        String info = "canLoadX5 = " + canLoadX5
+                + "\ncanLoadX5FirstTimeThirdApp = " + canLoadX5FirstTimeThirdApp
+                + "\ngetMiniQBVersion = " + getMiniQBVersion
+                + "\ngetTbsVersion = " + getTbsVersion;
+        Log.d(TAG, "displayInfo: " + info);
+        mBinding.tvInfo.setText(info);
     }
 }

@@ -12,6 +12,12 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary" />
 
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
