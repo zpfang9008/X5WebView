@@ -1,8 +1,10 @@
 package com.fang.lib.webview;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
@@ -14,6 +16,8 @@ import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
+
+import java.util.ArrayList;
 
 /**
  * 文件名：X5WebView
@@ -84,6 +88,31 @@ public class X5WebView extends WebView {
     private void initClient() {
         setWebViewClient(client);
         setWebChromeClient(mWebChromeClient);
+    }
+
+    /**
+     * 防止X5的广告，去掉QQ浏览器推荐下载
+     */
+    public static void removeAd(final Activity activity) {
+        activity.getWindow().getDecorView().addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v,
+                                       int left,
+                                       int top,
+                                       int right,
+                                       int bottom,
+                                       int oldLeft,
+                                       int oldTop,
+                                       int oldRight,
+                                       int oldBottom) {
+                ArrayList<View> outView = new ArrayList<View>();
+                activity.getWindow().getDecorView().findViewsWithText(outView, "QQ浏览器", View.FIND_VIEWS_WITH_TEXT);
+                int size = outView.size();
+                if (outView != null && outView.size() > 0) {
+                    outView.get(0).setVisibility(View.GONE);
+                }
+            }
+        });
     }
 
     private WebViewClient client = new WebViewClient() {
