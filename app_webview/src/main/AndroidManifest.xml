@@ -20,7 +20,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".CheckPageActivity"></activity>
+        <activity android:name=".WebActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

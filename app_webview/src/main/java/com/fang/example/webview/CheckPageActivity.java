@@ -4,54 +4,31 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ProgressBar;
+import android.support.v7.app.AppCompatActivity;
 
-import com.tencent.smtt.export.external.interfaces.IX5WebSettings;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
-public class WebActivity extends AppCompatActivity {
-
-    private static final String TAG = "WebActivity";
-
-    private WebView mWebView;
-    private ProgressBar mProgressBar;
+public class CheckPageActivity extends AppCompatActivity {
 
     public static void start(Context context) {
-        Intent starter = new Intent(context, WebActivity.class);
+        Intent starter = new Intent(context, CheckPageActivity.class);
         context.startActivity(starter);
     }
+
+    private WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWebView = new WebView(this);
-        mProgressBar = (ProgressBar) LayoutInflater.from(this).inflate(R.layout.layout_progress, null);
-
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT);
-        FrameLayout.LayoutParams pbParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
-        pbParams.gravity = Gravity.TOP;
-
-        addContentView(mWebView, params);
-        addContentView(mProgressBar, pbParams);
-
+        setContentView(R.layout.activity_check_page);
+        mWebView = findViewById(R.id.webview);
         initWebViewSettings();
 
-        mWebView.loadUrl("https://x5.tencent.com/product/tbi.html");
-
-        Log.d(TAG, "onCreate: " + mWebView.getX5WebViewExtension());
+        mWebView.loadUrl("http://debugtbs.qq.com");
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -81,7 +58,6 @@ public class WebActivity extends AppCompatActivity {
 
         mWebView.setWebViewClient(client);
         mWebView.setWebChromeClient(mWebChromeClient);
-
     }
 
     private WebViewClient client = new WebViewClient() {
@@ -97,13 +73,11 @@ public class WebActivity extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView webView, String s, Bitmap bitmap) {
             super.onPageStarted(webView, s, bitmap);
-            mProgressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
         public void onPageFinished(WebView webView, String s) {
             super.onPageFinished(webView, s);
-            mProgressBar.setVisibility(View.GONE);
         }
     };
 
@@ -112,7 +86,6 @@ public class WebActivity extends AppCompatActivity {
         @Override
         public void onProgressChanged(WebView webView, int i) {
             super.onProgressChanged(webView, i);
-            mProgressBar.setProgress(i);
         }
     };
 }

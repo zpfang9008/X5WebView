@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
         setInfo();
     }
 
+    public void openCheckWeb(View view) {
+        CheckPageActivity.start(this);
+    }
+
     private void checkPermission() {
         // Here, thisActivity is the current activity
         if (ContextCompat.checkSelfPermission(this,
@@ -125,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 mTvInfo.post(new Runnable() {
                     @Override
                     public void run() {
-                        mTvInfo.setText("onDownloadFinish = " + i);
+                        mTvInfo.setText("内核下载完成 = " + i);
                     }
                 });
 
@@ -149,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 mTvInfo.post(new Runnable() {
                     @Override
                     public void run() {
-                        mTvInfo.setText("onDownloadProgress = " + i);
+                        mTvInfo.setText("内核下载进度 = " + i);
                     }
                 });
 

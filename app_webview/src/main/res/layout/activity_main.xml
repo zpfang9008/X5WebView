@@ -47,4 +47,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_open" />
 
+    <Button
+        android:id="@+id/btn_open_check_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openCheckWeb"
+        android:text="打开检测"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_check" />
+
 </android.support.constraint.ConstraintLayout>
